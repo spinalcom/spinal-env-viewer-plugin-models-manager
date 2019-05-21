@@ -57,9 +57,9 @@ export class TranslateModelButton extends SpinalContextApp {
   }
   
   translateModel(option){
-    const nodeInfo = Object.assign( {}, option.selectedNode );
+  
     ModelManagerService.translateHelper.activate();
     ModelManagerService.translateHelper.setFullTransform(true);
-    ModelManagerService.setTranslateHelperSelection(nodeInfo);
+  
   }
 }

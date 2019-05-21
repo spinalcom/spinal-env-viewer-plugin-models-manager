@@ -32,7 +32,7 @@ export class OpenModelLoaderButton extends SpinalContextApp {
   
   constructor() {
     super( 'Load a model', 'Charger un  model', {
-      icon: 'get_app',
+      icon: 'business',
       icon_type: 'in',
       backgroundColor: '#000000',
       fontColor: '#ffffff'

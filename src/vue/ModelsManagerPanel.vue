@@ -28,24 +28,6 @@
     },
 
     methods: {
-      getSVF: function ( element, nodeId ) {
-        return loadModelPtr( element.ptr )
-          .then( elem => {
-              return loadModelPtr( elem.currentVersion )
-            }
-          )
-          .then( elem => {
-              if (elem.hasOwnProperty( 'items' ))
-                for (let i = 0; i < elem.items.length; i++)
-                  if (elem.items[i].path.get().indexOf( 'svf' ) !== -1) {
-                    this.thumbnail[nodeId] = elem.items[i].path.get() + '.png';
-                    return { path: elem.items[i].path.get(), id: nodeId };
-                  }
-
-              return undefined;
-            }
-          )
-      },
       opened: function ( option ) {
         const children = option.children;
         this.infos = [];
@@ -65,9 +47,10 @@
             return ModelsManagerService.loadModel( ev.path )
           } )
           .then( ( metaData ) => {
-            return assemblyManagerService.createPart( ev.name, metaData.model
+            return assemblyManagerService.createPart( ev.name,
+              metaData.model, ev.thumbnail
             ).then( nodeId => {
-              ModelsManagerService.setPartId( nodeId, metaData )
+              ModelsManagerService.setPartId( nodeId, metaData.modelId )
             } )
           } );
 

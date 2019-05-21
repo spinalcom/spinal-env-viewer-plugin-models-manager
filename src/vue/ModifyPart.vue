@@ -2,7 +2,7 @@
 
     <div class="body-modify">
         <div v-if="!displayNameEditor" class="name-area">
-            <h1>{{name}}</h1>
+            <h2>{{name}}</h2>
             <SpinalIconButton
                     icon="edit"
                     @click="displayNameEditor = true"/>
@@ -21,20 +21,7 @@
         </div>
         <md-switch v-model="loadAuto">Load Automatically</md-switch>
 
-        <md-divider/>
-        <transformation-component name="Translation"
-                                  :value="translation"
-                                  :min="0"
-                                  :max="100"
-                                  @change="onTranslationChange"/>
-        <md-divider/>
-        <transformation-component name="Rotation"
-                                  :value="rotation"
-                                  :min="0"
-                                  :max="360"
-                                  @change="onRotationChange"/>
-
-        <md-divider/>
+        <img :src="node.thumbnail">
 
     </div>
 
@@ -60,15 +47,9 @@
         displayNameEditor: false,
         editedName: '',
         id: '',
-        open: false,
-        translation: { x: 0, y: 0, z: 0 },
-        rotation: { x: 0, y: 0, z: 0 },
-        scale: { x: 0, y: 0, z: 0 },
         loadAuto: false,
         modelManager: {},
         node: {},
-        store: {},
-        movie: ''
       }
     },
     methods: {
@@ -77,34 +58,15 @@
         this.id = this.node.id;
         this.loadAuto = this.node.autoLoad;
         this.name = this.node.name;
-        if (option.transformation) {
-          if (option.transformation.translate)
-            this.translation = option.transformation.translate;
-          if (option.transformation.rotate) {
-
-            this.rotation = {
-              x: (option.transformation.rotate.x * (180 /
-                Math.PI)) % 360,
-              y: (option.transformation.rotate.y * (180 /
-                Math.PI)) % 360,
-              z: (option.transformation.rotate.z * (180 /
-                Math.PI)) % 360
-            };
-          }
-          if (option.transformation.scale)
-            this.scale = option.transformation.scale;
-        }
-
-        this.open = true;
       },
       closed: function ( option ) {
-        //this.store.dispatch('togglePanel');
+
       },
       closePanel: function () {
         spinalPanelManagerService.closePanel( 'ModifyPartModal' )
       },
       removed: function () {
-        //  this.store.dispatch('togglePanel');
+
       },
       isActive: function ( id ) {
         return window.spinal.ForgeViewer.viewer.model.id === id;
@@ -116,20 +78,6 @@
           SpinalGraphService.modifyNode( this.id, { name: this.name } )
         }
       },
-      onTranslationChange: function ( value ) {
-        this.translation = value;
-      },
-      onRotationChange: function ( value ) {
-        //        this.modelManager.transformModel(this.model)
-        this.rotation = {
-          x: value.x,
-          y: value.y,
-          z: value.z
-        };
-      },
-      onScaleChange: function ( value ) {
-        this.scale = value;
-      }
     },
     watch: {
       displayNameEditor: function ( value ) {

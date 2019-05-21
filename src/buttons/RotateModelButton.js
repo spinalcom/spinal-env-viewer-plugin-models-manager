@@ -55,9 +55,9 @@ export class RotateModelButton extends SpinalContextApp {
   }
   
   rotateModel( option ) {
-    const nodeInfo = Object.assign( {}, option.selectedNode );
+    
     ModelManagerService.rotateHelper.activate();
     ModelManagerService.rotateHelper.setFullTransform( true );
-    ModelManagerService.setRotateHelperSelection( nodeInfo );
+    
   }
 }

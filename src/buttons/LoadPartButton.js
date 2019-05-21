@@ -42,11 +42,11 @@ export class LoadPartButton extends SpinalContextApp {
   }
   
   isShown( option ) {
-    
+    const model = assemblyManagerService.getModel( option.selectedNode.id.get() );
+  
     if (
         option.selectedNode.type.get() === 'AssemblyPart'
-        && !option.selectedNode.model
-        && !option.selectedNode.modelId
+       && !model
     ) {
       return Promise.resolve( true );
     } else {
