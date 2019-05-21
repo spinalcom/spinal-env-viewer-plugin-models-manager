@@ -23,7 +23,7 @@
     "spinal-env-viewer-graph-service": "git+https://github.com/spinalcom/Spinal-Graph-Service.git",
     "spinal-env-viewer-panel-manager-service": "git+https://github.com/spinalcom/spinal-env-viewer-panel-manager-service.git",
     "spinal-env-viewer-panel-manager-service_spinalforgeextention": "git+https://github.com/spinalcom/spinal-env-viewer-panel-manager-service_spinalforgeextention.git",
-    "spinal-models-manager-service": "file:../spinal-service-models-manager",
+    "spinal-models-manager-service": "git+https://github.com/spinalcom/spinal-service-models-manager.git",
     "vue-slide-bar": "^1.1.9"
   },
   "browserify": {
