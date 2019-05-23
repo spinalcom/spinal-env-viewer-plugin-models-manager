@@ -1,21 +1,19 @@
-import { spinalContextMenuService } from "spinal-env-viewer-context-menu-service";
 import Vue from "vue";
+import { spinalContextMenuService } from "spinal-env-viewer-context-menu-service";
 import { OpenModelLoaderButton } from "./buttons/OpenModelLoaderButton";
 import { SpinalForgeExtention } from "spinal-env-viewer-panel-manager-service_spinalforgeextention";
-import { ModifyPartButton } from "./buttons/ModifyPartButton";
 import { SpinalMountExtention } from 'spinal-env-viewer-panel-manager-service';
-
-import {
-  SIDE_BAR_HOOK_NAME,
-  TOP_BAR_HOOK_NAME
-} from "./constants";
 import ModelsManagerPanel from "./vue/ModelsManagerPanel.vue";
 import ModifyPart from "./vue/ModifyPart.vue";
 import { TranslateModelButton } from "./buttons/TranslateModelButton";
 import { RotateModelButton } from "./buttons/RotateModelButton";
 import { ToggleModelVisibilityButton } from "./buttons/ToggleModelVisibilityButton";
-import { Remove } from "./buttons/Remove";
 import { LoadPartButton } from "./buttons/LoadPartButton";
+import { ModifyPartButton } from "./buttons/ModifyPartButton";
+import {
+  SIDE_BAR_HOOK_NAME,
+  TOP_BAR_HOOK_NAME
+} from "./constants";
 
 
 const modelManager = SpinalForgeExtention.createExtention( {
