@@ -24,7 +24,7 @@
 
 import { SpinalContextApp } from 'spinal-env-viewer-context-menu-service';
 import { SpinalGraphService } from "spinal-env-viewer-graph-service";
-import { loadModelPtr } from "../utits";
+import { loadModelPtr } from "../utils";
 
 const { spinalPanelManagerService } = require( "spinal-env-viewer-panel-manager-service" );
 

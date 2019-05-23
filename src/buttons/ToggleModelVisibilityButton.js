@@ -1,7 +1,6 @@
 import {
   SpinalContextApp,
 } from 'spinal-env-viewer-context-menu-service';
-import { spinalPanelManagerService } from 'spinal-env-viewer-panel-manager-service';
 import { assemblyManagerService } from "spinal-service-assembly-manager";
 
 export class ToggleModelVisibilityButton extends SpinalContextApp {

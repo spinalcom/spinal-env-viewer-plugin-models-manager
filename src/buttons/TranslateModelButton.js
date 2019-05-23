@@ -26,7 +26,7 @@ import {
   SpinalContextApp,
 } from 'spinal-env-viewer-context-menu-service';
 
-import ModelManagerService from 'spinal-models-manager-service'
+import ModelManagerService from 'spinal-service-models-manager'
 import { assemblyManagerService } from "spinal-service-assembly-manager";
 
 export class TranslateModelButton extends SpinalContextApp {

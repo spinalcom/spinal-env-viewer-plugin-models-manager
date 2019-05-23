@@ -27,7 +27,7 @@ import {
 } from 'spinal-env-viewer-context-menu-service';
 
 import { assemblyManagerService } from "spinal-service-assembly-manager";
-import ModelManagerService from 'spinal-models-manager-service'
+import ModelManagerService from 'spinal-service-models-manager'
 
 export class RotateModelButton extends SpinalContextApp {
   
