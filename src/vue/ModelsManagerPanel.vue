@@ -14,8 +14,7 @@
 </template>
 
 <script>
-  import { loadModelPtr } from "../utits";
-  import ModelsManagerService from 'spinal-models-manager-service'
+  import ModelsManagerService from 'spinal-service-models-manager'
   import { assemblyManagerService } from "spinal-service-assembly-manager";
 
   export default {
