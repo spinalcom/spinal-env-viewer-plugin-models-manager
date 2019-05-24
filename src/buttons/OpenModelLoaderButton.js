@@ -31,7 +31,7 @@ const { spinalPanelManagerService } = require( "spinal-env-viewer-panel-manager-
 export class OpenModelLoaderButton extends SpinalContextApp {
   
   constructor() {
-    super( 'Load a model', 'Charger un  model', {
+    super( 'Open Model Manager', 'Open Model Manager', {
       icon: 'business',
       icon_type: 'in',
       backgroundColor: '#000000',

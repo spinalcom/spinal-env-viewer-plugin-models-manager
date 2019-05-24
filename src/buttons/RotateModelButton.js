@@ -44,7 +44,6 @@ export class RotateModelButton extends SpinalContextApp {
   }
   
   mIsShown( option ) {
-    console.log(option);
     const model = assemblyManagerService.getModel( option.selectedNode.id.get() );
     
     if (model && (option.selectedNode.type.get() === 'AssemblyPart')) {
