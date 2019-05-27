@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div v-for="info in infos" class="list-model">
+    <div class="list-model">
+        <div v-for="info in infos" class="model">
             <div class="model-info">
                 Name: {{info.name}}
                 <img :src="info.thumbnail" :alt="info.name"/>
@@ -70,7 +70,7 @@
 
     }
 
-    .list-model {
+    .model {
         display: flex;
         align-items: center;
         border-top: #fefefe solid 1px;
@@ -78,6 +78,23 @@
         border-right: #fefefe solid 1px;
         padding: 10px
     }
+
+    .list-model{
+        max-height: 80vh;
+    }
+    .list-model::-webkit-scrollbar {
+             width: 2px;
+             -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+             background-color: #121212;
+         }
+    .list-model::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+    .list-model::-webkit-scrollbar-thumb {
+        outline: 1px solid slategrey;
+        background-color: #737374;
+    }
+
 
 
 </style>
